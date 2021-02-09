@@ -7,10 +7,11 @@ const AllCharacter = () => {
   const [characters, setCharacters] = useState([]);
 
   useEffect(() => {
-    getCharacters().then((characters) => {
-      setCharacters(characters);
-      setLoading(false);
-    });
+    getCharacters()
+      .then((characters) => {
+        setCharacters(characters);
+        setLoading(false);
+      });
   }, []);
   if (loading) return <h1>Loading</h1>;
   return <CharacterList characters={characters} />;
