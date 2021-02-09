@@ -4,7 +4,7 @@ import {
   Switch,
   Route
 } from 'react-router-dom';
-import AllCharacter from '../character/AllCharacter';
+import AllCharacter from '../../containers/AllCharacter';
 import Detail from '../detail/Detail';
 
 export default function App() {
