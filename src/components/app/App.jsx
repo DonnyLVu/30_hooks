@@ -5,7 +5,7 @@ import {
   Route
 } from 'react-router-dom';
 import AllCharacter from '../../containers/AllCharacter';
-import Detail from '../detail/Detail';
+import DetailPage from '../../containers/DetailPage';
 
 export default function App() {
   return (
@@ -18,8 +18,8 @@ export default function App() {
         </Route>
         <Route
           exact
-          path="/:id"
-          component={Detail}>
+          path="/characters/:_id"
+          component={DetailPage}>
         </Route>
       </Switch>
     </Router>

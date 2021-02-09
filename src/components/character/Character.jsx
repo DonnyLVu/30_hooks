@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const Character = ({ name, photoUrl, _id }) => (
   <figure>
     <figcaption>{name}</figcaption>
-    <Link to={`/character/${_id}`}>
+    <Link to={`/characters/${_id}`}>
       <img src={photoUrl} />
     </Link>
   </figure>

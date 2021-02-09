@@ -1,19 +1,28 @@
 import React, { useEffect, useState } from 'react';
-import CharacterList from '../components/character/CharacterList';
+import Detail from '../components/detail/Detail';
+import { useParams } from 'react-router-dom';
 import { getDetail } from '../services/avatarApi';
 
 const DetailPage = () => {
   const [loading, setLoading] = useState(true);
   const [characters, setCharacters] = useState([]);
 
+  const { _id } = useParams();
   useEffect(() => {
-    getDetail().then((characters) => {
+    getDetail(_id).then((characters) => {
       setCharacters(characters);
       setLoading(false);
     });
   }, []);
   if (loading) return <h1>Loading</h1>;
-  return <CharacterList characters={characters} />;
+
+  return <Detail
+    name={characters.name}
+    photoUrl={characters.photoUrl}
+    allies={characters.allies}
+    enemies={characters.enemies}
+    affiliation={characters.affiliation}
+  />;
 };
 
 export default DetailPage;
